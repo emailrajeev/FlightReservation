@@ -3,14 +3,29 @@ package com.rajeev.flightReservation.entity;
 import java.sql.Timestamp;
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Table;
 @Entity
+@Table(name="Flight")
 public class Flight extends AbstractEntity{
+	
+	@Column(name="FLIGHT_NUMBER")
 	private String FLIGHT_NUMBER;
+	
+	@Column(name="OPERATION_AIRLINES")
 	private String OPERATION_AIRLINES;
+	
+	@Column(name="DEPARTURE_CITY")
 	private String DEPARTURE_CITY;
+	
+	@Column(name="ARRIVAL_CITY")
 	private String ARRIVAL_CITY;
+	
+	@Column(name="DATE_OF_DEPARTUURE")
 	private Date DATE_OF_DEPARTUURE;
+	
+	@Column(name="ESTIMATED_DEPARTURE_TIME")
 	private Timestamp ESTIMATED_DEPARTURE_TIME;
 	
 	public String getFLIGHT_NUMBER() {

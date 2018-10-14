@@ -1,14 +1,22 @@
 package com.rajeev.flightReservation.entity;
-
-import javax.persistence.Entity;
+import javax.persistence.*;
 
 @Entity
+@Table(name="user")
 public class User extends AbstractEntity {
-
+	
+	@Column(name="FIRST_NAME")
     private String FIRST_NAME;
-    private String LAST_NAME;
+	
+	@Column(name="LAST_NAME")
+   	private String LAST_NAME;
+	
+	@Column(name="EMAIL")
     private String EMAIL;
+	
+	@Column(name="PASSWORD")
     private String PASSWORD;
+	
 	public String getFIRST_NAME() {
 		return FIRST_NAME;
 	}

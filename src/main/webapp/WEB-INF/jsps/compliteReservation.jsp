@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Find Flight</title>
+<title>Comlite Reservation Form</title>
 </head>
 <body>
 	<h2>Flight</h2>
@@ -22,7 +22,7 @@
      		   <th>${flights.DEPARTURE_CITY}</th>
      		   <th>${flights.ARRIVAL_CITY}</th>
      		   <th>${flights.ESTIMATED_DEPARTURE_TIME}</th>
-     		   <th><a href="showCompleteReservation?flightId=${flight.id}"></a></th>
+     		   <th><a href="showCompleteReservation?flight Id=${flight.id}"></a></th>
      		   </tr>
      	</c:forEach>
 	</table>
