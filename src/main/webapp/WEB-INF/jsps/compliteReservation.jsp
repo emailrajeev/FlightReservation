@@ -8,23 +8,27 @@
 <title>Comlite Reservation Form</title>
 </head>
 <body>
-	<h2>Flight</h2>
-	<table>
-		<tr>
-			<th>Airlince</th>
-			<th>Dipature City</th>
-			<th>Airival City</th>
-			<th>Daparture Time</th>
-		</tr>
-		<c:forEach items=${flights } var="flight">
-     		   <tr>
-     		   <th>${flights.OPERATION_AIRLINES}</th>
-     		   <th>${flights.DEPARTURE_CITY}</th>
-     		   <th>${flights.ARRIVAL_CITY}</th>
-     		   <th>${flights.ESTIMATED_DEPARTURE_TIME}</th>
-     		   <th><a href="showCompleteReservation?flight Id=${flight.id}"></a></th>
-     		   </tr>
-     	</c:forEach>
-	</table>
+	<h2>Flight Complite Reservation</h2>
+
+	Airlince: ${flights.OPERATION_AIRLINES} <br/>
+	Departure City: ${flights.DEPARTURE_CITY}<br/>
+	Arrivel City: ${flights.ARRIVAL_CITY} <br/>
+	
+	<form action="CompliteReservation" method="post">
+		<pre>
+			<h2>Passenger Deteils</h2>
+			First Name: <input type="text" name="FIRST_NAME" required/>
+			Last Name: <input type="text" name="LAST_NAME" required/>
+			Email: <input type="text" name="EMAIL" required/>
+			Phone: <input type="text" name="PHONE" required/>
+			<h2>Card Details</h2>
+			Name of Card: <input type="text" name="nameOfCatd" required/>
+			Card Number: <input type="text" name="cardNumber" required/>
+			Expiry Date: <input type="text" name="expiryDate" required/>
+			Three Digit Sec Code: <input type="text" name="threeDigitSecCode" required/>
+			<input type="hidden" name="flightId" value="${flight.id}"/>
+			<input type="submit" value="Conform"/>
+		</pre>
+	</form>
 </body>
 </html>
