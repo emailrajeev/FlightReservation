@@ -15,7 +15,7 @@ public class UserController {
 	@Autowired
 	UserRepogietrery userRepogietrery;
 	
-	@RequestMapping("/show")
+	@RequestMapping("/showReg")
 	public String showRegisterpage() {
 		return "RegisterUser";
 	}
@@ -31,8 +31,8 @@ public class UserController {
 	}
 	
 	@RequestMapping(value="/login",method=RequestMethod.POST)
-	public String login(@RequestParam("email")String email1,@RequestParam("password") String password,ModelMap modelmap) {
-		User user=userRepogietrery.findByEmail(email1);
+	public String login(@RequestParam("email")String email,@RequestParam("password") String password,ModelMap modelmap) {
+		User user=userRepogietrery.findByEmail(email);
 		if(user.getPASSWORD().equals(password)) {
 			return "findFlight";
 		}else {
@@ -41,5 +41,8 @@ public class UserController {
 		return "login";
 
 	}
-
+	@RequestMapping("/showLogin")
+	public String showLoginpage() {
+		return "login";
+	}
 }

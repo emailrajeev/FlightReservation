@@ -6,6 +6,6 @@ import com.rajeev.flightReservation.entity.User;
 
 
 public interface UserRepogietrery extends JpaRepository<User, Long> {
-	@Query(value="select user(email) from user where email=?",nativeQuery = true)
+	@Query(nativeQuery=true,value="SELECT * FROM USER WHERE EMAIL = ?")
 	User findByEmail(String email);
 }

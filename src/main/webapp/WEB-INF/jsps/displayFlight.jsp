@@ -16,7 +16,7 @@
 			<th>Airival City</th>
 			<th>Daparture Time</th>
 		</tr>
-		<c:forEach items=${flights } var="flight">
+		<c:forEach items=${flights} var="flight">
      		   <tr>
      		   <th>${flights.OPERATION_AIRLINES}</th>
      		   <th>${flights.DEPARTURE_CITY}</th>

@@ -4,15 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Flight Search </title>
+<title>Insert title here</title>
 </head>
 <body>
-   <H1>Flight Search </H1>
-   <form action="findFlight" method="post">
-   From<input type="text" name="from"/>
-   To<input type="text" name="to"/>
-   Departure Date<input type="text" name="depaartureDate"/>
-   <input type="submit" value="Search Flight"/>
-   </form>
+  ${msg}
 </body>
 </html>
