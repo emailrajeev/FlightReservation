@@ -9,7 +9,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name="Flight")
 public class Flight extends AbstractEntity{
-	
+
 	@Column(name="FLIGHT_NUMBER")
 	private String FLIGHT_NUMBER;
 	
@@ -17,13 +17,13 @@ public class Flight extends AbstractEntity{
 	private String OPERATION_AIRLINES;
 	
 	@Column(name="DEPARTURE_CITY")
-	private String from;
+	private String DEPARTURE_CITY;
 	
 	@Column(name="ARRIVAL_CITY")
-	private String to;
+	private String ARRIVAL_CITY;
 	
 	@Column(name="DATE_OF_DEPARTUURE")
-	private Date depaartureDate;
+	private Date DATE_OF_DEPARTUURE;
 	
 	@Column(name="ESTIMATED_DEPARTURE_TIME")
 	private Timestamp ESTIMATED_DEPARTURE_TIME;
@@ -44,28 +44,28 @@ public class Flight extends AbstractEntity{
 		OPERATION_AIRLINES = oPERATION_AIRLINES;
 	}
 
-	public String getFrom() {
-		return from;
+	public String getDEPARTURE_CITY() {
+		return DEPARTURE_CITY;
 	}
 
-	public void setFrom(String from) {
-		this.from = from;
+	public void setDEPARTURE_CITY(String dEPARTURE_CITY) {
+		DEPARTURE_CITY = dEPARTURE_CITY;
 	}
 
-	public String getTo() {
-		return to;
+	public String getARRIVAL_CITY() {
+		return ARRIVAL_CITY;
 	}
 
-	public void setTo(String to) {
-		this.to = to;
+	public void setARRIVAL_CITY(String aRRIVAL_CITY) {
+		ARRIVAL_CITY = aRRIVAL_CITY;
 	}
 
-	public Date getDepaartureDate() {
-		return depaartureDate;
+	public Date getDATE_OF_DEPARTUURE() {
+		return DATE_OF_DEPARTUURE;
 	}
 
-	public void setDepaartureDate(Date depaartureDate) {
-		this.depaartureDate = depaartureDate;
+	public void setDATE_OF_DEPARTUURE(Date dATE_OF_DEPARTUURE) {
+		DATE_OF_DEPARTUURE = dATE_OF_DEPARTUURE;
 	}
 
 	public Timestamp getESTIMATED_DEPARTURE_TIME() {
@@ -75,8 +75,6 @@ public class Flight extends AbstractEntity{
 	public void setESTIMATED_DEPARTURE_TIME(Timestamp eSTIMATED_DEPARTURE_TIME) {
 		ESTIMATED_DEPARTURE_TIME = eSTIMATED_DEPARTURE_TIME;
 	}
-	
+
 	
 }
-
-

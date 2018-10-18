@@ -11,14 +11,14 @@
    <h2>Register User</h2>
      <form action="RegisterUser" method="post">
      <pre>
-     First Name:-<input type="text"  name="FIRST_NAME">
-     Last Name:-<input type="text" name="LAST_NAME">
-     User Name:-<input type="text" name="EMAIL">
-     Password:-<input type="password" name="PASSWORD">
-     
-     Conform Password:-<input type="password">
-     <input type="submit" value="Register">
+     First Name:-<input type="text"  name="FIRST_NAME"/>
+     Last Name:-<input type="text" name="LAST_NAME"/>
+     User Name:-<input type="text" name="EMAIL"/>
+     Password:-<input type="password" name="PASSWORD"/>
+     Conform Password:-<input type="conformPassword"/>
+     <input type="submit" value="Register"/>
      </pre>
      </form>
+     ${msg}
 </body>
 </html>

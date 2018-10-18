@@ -17,6 +17,8 @@ public class User extends AbstractEntity {
 	@Column(name="PASSWORD")
     private String PASSWORD;
 	
+	private String conformPassword;
+	
 	public String getFIRST_NAME() {
 		return FIRST_NAME;
 	}
@@ -40,6 +42,9 @@ public class User extends AbstractEntity {
 	}
 	public void setPASSWORD(String pASSWORD) {
 		PASSWORD = pASSWORD;
+	}
+	public String getConformPassword() {
+		return conformPassword;
 	}
    
 }

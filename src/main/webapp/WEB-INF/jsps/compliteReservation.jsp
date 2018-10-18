@@ -17,15 +17,15 @@
 	<form action="CompliteReservation" method="post">
 		<pre>
 			<h2>Passenger Deteils</h2>
-			First Name: <input type="text" name="FIRST_NAME" required/>
-			Last Name: <input type="text" name="LAST_NAME" required/>
-			Email: <input type="text" name="EMAIL" required/>
-			Phone: <input type="text" name="PHONE" required/>
+			First Name: <input type="text" name="FIRST_NAME"/>
+			Last Name: <input type="text" name="LAST_NAME" />
+			Email: <input type="text" name="EMAIL"/>
+			Phone: <input type="text" name="PHONE"/>
 			<h2>Card Details</h2>
-			Name of Card: <input type="text" name="nameOfCatd" required/>
-			Card Number: <input type="text" name="cardNumber" required/>
-			Expiry Date: <input type="text" name="expiryDate" required/>
-			Three Digit Sec Code: <input type="text" name="threeDigitSecCode" required/>
+			Name of Card: <input type="text" name="nameOfCatd"/>
+			Card Number: <input type="text" name="cardNumber"/>
+			Expiry Date: <input type="text" name="expiryDate"/>
+			Three Digit Sec Code: <input type="text" name="threeDigitSecCode"/>
 			<input type="hidden" name="flightId" value="${flight.id}"/>
 			<input type="submit" value="Conform"/>
 		</pre>

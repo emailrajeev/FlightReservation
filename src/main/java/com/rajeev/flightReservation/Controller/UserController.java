@@ -9,27 +9,25 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import com.rajeev.flightReservation.Repo.UserRepogietrery;
 import com.rajeev.flightReservation.entity.User;
-
 @Controller
 public class UserController {
 	@Autowired
 	UserRepogietrery userRepogietrery;
-	
+
 	@RequestMapping("/showReg")
 	public String showRegisterpage() {
 		return "RegisterUser";
 	}
 	@RequestMapping(value="RegisterUser",method = RequestMethod.POST)
-	public String register(@ModelAttribute("user") User user) {
-		
+	public String register(@ModelAttribute("user") User user,ModelMap modelmap) {
 		if(user.getFIRST_NAME()==null && user.getLAST_NAME()==null && user.getEMAIL()==null && user.getPASSWORD()==null) {
 			return "RegisterUser";	
 		}else {
 			userRepogietrery.save(user);
 		}
+
 		return "login";
 	}
-	
 	@RequestMapping(value="/login",method=RequestMethod.POST)
 	public String login(@RequestParam("email")String email,@RequestParam("password") String password,ModelMap modelmap) {
 		User user=userRepogietrery.findByEmail(email);
@@ -39,7 +37,6 @@ public class UserController {
 			modelmap.addAttribute("msg","Invalid User Name And Password !!!-");
 		}
 		return "login";
-
 	}
 	@RequestMapping("/showLogin")
 	public String showLoginpage() {

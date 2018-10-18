@@ -12,13 +12,16 @@ import com.rajeev.flightReservation.entity.Passenger;
 import com.rajeev.flightReservation.entity.Reservtion;
 @Service
 public class ReservationRequestImpl implements ReservationService {
+	
 	@Autowired
 	FlightRepogietrery fRepo;
+	
 	@Autowired
 	PassengerRepositry pRepo;
+	
 	@Autowired
 	ReservationRepositry rReq;
-	
+
 	public Reservtion bookFlight(ReservationRequest request) {
 		//Make Payment
 		Long flightId=request.getFlightId();

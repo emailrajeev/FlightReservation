@@ -9,20 +9,20 @@
 </head>
 <body>
 	<h2>Flight</h2>
-	<table>
+	<table border="2">
 		<tr>
-			<th>Airlince</th>
-			<th>Dipature City</th>
-			<th>Airival City</th>
-			<th>Daparture Time</th>
+			<th>Airline</th>
+			<th>Departure City</th>
+			<th>Arrival City</th>
+			<th>Departure Time</th>
 		</tr>
-		<c:forEach items=${flights} var="flight">
+		<c:forEach items="${flights}" var="flight">
      		   <tr>
-     		   <th>${flights.OPERATION_AIRLINES}</th>
-     		   <th>${flights.DEPARTURE_CITY}</th>
-     		   <th>${flights.ARRIVAL_CITY}</th>
-     		   <th>${flights.ESTIMATED_DEPARTURE_TIME}</th>
-     		   <th><a href="showCompleteReservation?flightId=${flight.id}"></a></th>
+     		   <th>${flight.OPERATION_AIRLINES}</th>
+     		   <th>${flight.DEPARTURE_CITY}</th>
+     		   <th>${flight.ARRIVAL_CITY}</th>
+     		   <th>${flight.ESTIMATED_DEPARTURE_TIME}</th>
+     		   <th><a href="showCompleteReservation?flightId=${flight.id}">Select</a></th>
      		   </tr>
      	</c:forEach>
 	</table>
