@@ -17,6 +17,7 @@ public class User extends AbstractEntity {
 	@Column(name="PASSWORD")
     private String PASSWORD;
 	
+	@Column(name="conform_password")
 	private String conformPassword;
 	
 	public String getFIRST_NAME() {

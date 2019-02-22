@@ -11,35 +11,51 @@ import com.rajeev.flightReservation.Repo.UserRepogietrery;
 import com.rajeev.flightReservation.entity.User;
 @Controller
 public class UserController {
+	
 	@Autowired
 	UserRepogietrery userRepogietrery;
-
+	
+	@Autowired
+    ReservationControl control;
+	
 	@RequestMapping("/showReg")
 	public String showRegisterpage() {
 		return "RegisterUser";
 	}
+
 	@RequestMapping(value="RegisterUser",method = RequestMethod.POST)
 	public String register(@ModelAttribute("user") User user,ModelMap modelmap) {
-		if(user.getFIRST_NAME()==null && user.getLAST_NAME()==null && user.getEMAIL()==null && user.getPASSWORD()==null) {
+		if(user.getFIRST_NAME()==null && user.getLAST_NAME()==null &&
+									user.getEMAIL()==null && user.getPASSWORD()==null && user.getConformPassword()==null) {
 			return "RegisterUser";	
 		}else {
+			if(user.getPASSWORD().equals(user.getConformPassword())){
 			userRepogietrery.save(user);
+			}else{
+				modelmap.addAttribute("msg","Invalid User Name And Password !!!-");		
+				return "RegisterUser";
+		
+			}
 		}
-
 		return "login";
 	}
 	@RequestMapping(value="/login",method=RequestMethod.POST)
-	public String login(@RequestParam("email")String email,@RequestParam("password") String password,ModelMap modelmap) {
+	public String login(@RequestParam("email")String email,
+			                @RequestParam("password") String password,ModelMap modelmap) {
 		User user=userRepogietrery.findByEmail(email);
 		if(user.getPASSWORD().equals(password)) {
 			return "findFlight";
 		}else {
 			modelmap.addAttribute("msg","Invalid User Name And Password !!!-");
+			
+			
 		}
 		return "login";
 	}
+	
 	@RequestMapping("/showLogin")
 	public String showLoginpage() {
 		return "login";
 	}
+	
 }
