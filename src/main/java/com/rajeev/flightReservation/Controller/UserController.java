@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import com.rajeev.flightReservation.Repo.UserRepogietrery;
 import com.rajeev.flightReservation.entity.User;
+
 @Controller
 public class UserController {
 	
