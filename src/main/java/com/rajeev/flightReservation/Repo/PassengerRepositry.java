@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.rajeev.flightReservation.entity.Passenger;
 
-public interface PassengerRepositry extends JpaRepository<Passenger,Long>{
+public interface PassengerRepositry extends JpaRepository<Passenger, Long> {
 
 }

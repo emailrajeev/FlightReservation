@@ -19,19 +19,20 @@ public class ReservationControl {
 	FlightRepogietrery repo;
 	@Autowired
 	ReservationService resSer;
-	
+
 	@RequestMapping("/showCompleteReservation")
-	public String showCompleteReservationpublic(@RequestParam("flightId")Long flightid,ModelMap modelmap) {
+	public String showCompleteReservationpublic(@RequestParam("flightId") Long flightid, ModelMap modelmap) {
 		System.out.println("showCompleteReservation");
 		Flight flight = repo.findOne(flightid);
 		modelmap.addAttribute("flights", flight);
 		return "compliteReservation";
 	}
-	@RequestMapping(value="/CompliteReservation",method=RequestMethod.POST)
-	public String CompleteReservation(ReservationRequest request,ModelMap modelmap) {
-		Reservtion reservation=resSer.bookFlight(request);
-		
-		modelmap.addAttribute("msg", "Reservation Create Sucessfuly and id is: "+reservation.getId());
+
+	@RequestMapping(value = "/CompliteReservation", method = RequestMethod.POST)
+	public String CompleteReservation(ReservationRequest request, ModelMap modelmap) {
+		Reservtion reservation = resSer.bookFlight(request);
+
+		modelmap.addAttribute("msg", "Reservation Create Sucessfuly and id is: " + reservation.getId());
 		return "reservationConfarmation";
 	}
 }

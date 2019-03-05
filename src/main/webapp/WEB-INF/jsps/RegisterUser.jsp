@@ -11,16 +11,11 @@
 	<h2>Register User</h2>
 	<form action="RegisterUser" method="post">
 		<pre>
-     <h5>First Name:-</h5>
-			<input type="text" name="FIRST_NAME" />
-     <h5>Last Name:-</h5>
-			<input type="text" name="LAST_NAME" />
-     <h5>UserName/Email_ID:-</h5>
-			<input type="text" name="EMAIL" />
-     <h5>Password:-</h5>
-			<input type="password" name="PASSWORD" />
-     <h5>Conform Password:-</h5>
-			<input type="conformPassword" />
+     First Name:-<input type="text" name="FIRST_NAME" />
+     Last Name:-<input type="text" name="LAST_NAME" />
+     UserName/Email_ID:-<input type="text" name="EMAIL" />
+     Password:-<input type="password" name="PASSWORD" />
+     Conform Password:-<input type="password" name="conformPassword"/>
      <input type="submit" value="Register" />
      </pre>
 	</form>

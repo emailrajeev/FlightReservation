@@ -12,14 +12,18 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.rajeev.flightReservation.Repo.FlightRepogietrery;
 import com.rajeev.flightReservation.entity.Flight;
+
 @Controller
 public class FlightController {
-	@Autowired     
+	@Autowired
 	FlightRepogietrery repo;
+
 	@RequestMapping("findFlight")
-	public String fingFlight(@RequestParam("from")String from,@RequestParam("to")String to,@RequestParam("depaartureDate")@DateTimeFormat(pattern="MM-dd-yyyy")Date depaartureDate,ModelMap modelmap){
-		List<Flight> flight=repo.findFlight(from,to,depaartureDate);
-		modelmap.addAttribute("flights", flight);   
-			return "displayFlight";
+	public String fingFlight(@RequestParam("from") String from, @RequestParam("to") String to,
+			@RequestParam("depaartureDate") @DateTimeFormat(pattern = "MM-dd-yyyy") Date depaartureDate,
+			ModelMap modelmap) {
+		List<Flight> flight = repo.findFlight(from, to, depaartureDate);
+		modelmap.addAttribute("flights", flight);
+		return "displayFlight";
 	}
 }
