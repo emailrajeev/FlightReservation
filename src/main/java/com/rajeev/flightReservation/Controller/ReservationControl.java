@@ -22,8 +22,11 @@ public class ReservationControl {
 
 	@RequestMapping("/showCompleteReservation")
 	public String showCompleteReservationpublic(@RequestParam("flightId") Long flightid, ModelMap modelmap) {
+		System.out.println( repo.findOne(flightid));// Check 
 		System.out.println("showCompleteReservation");
-		Flight flight = repo.findOne(flightid);
+		System.out.println(flightid);
+		Flight flight=repo.findOne(flightid);
+		
 		modelmap.addAttribute("flights", flight);
 		return "compliteReservation";
 	}
